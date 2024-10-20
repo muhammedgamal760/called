@@ -1,0 +1,9 @@
+name: "Example Composite Action"
+description: "An example composite action"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Print environment variable
+      run: echo "The value of MY_ENV_VAR is $MY_ENV_VAR"
+      shell: bash
