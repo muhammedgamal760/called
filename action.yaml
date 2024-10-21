@@ -9,6 +9,7 @@ runs:
   using: "composite"
   steps:
     - name: Print environment variable
+      shell: bash
       run:  |
         echo "${{ inputs.token }}"
         git config --global url."https://${{ inputs.token_github }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
