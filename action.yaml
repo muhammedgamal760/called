@@ -11,13 +11,5 @@ runs:
     - name: Print environment variable
       run:  |
         echo "${{ inputs.token }}"
-        git config --global --add url."git@github.com:".insteadOf "https://github.com/"
-      shell: bash
-    
-
-    - name: Checkout
-      uses: actions/checkout@v3
-      with:
-          repository: 'muhammedgamal760/grad_project'
-          ref       : 'main'
-          token     : "${{ inputs.token }}" 
+        git config --global url."https://${{ inputs.token_github }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+        git clone --branch main https://github.com/muhammedgamal760/grad_project.git
