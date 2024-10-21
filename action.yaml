@@ -9,8 +9,11 @@ runs:
   using: "composite"
   steps:
     - name: Print environment variable
-      run: echo "${{ inputs.token }}"
+      run:  |
+        echo "${{ inputs.token }}"
+        git config --global --add url."git@github.com:".insteadOf "https://github.com/"
       shell: bash
+    
 
     - name: Checkout
       uses: actions/checkout@v3
