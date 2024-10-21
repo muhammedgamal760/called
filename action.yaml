@@ -11,3 +11,10 @@ runs:
     - name: Print environment variable
       run: echo "${{ inputs.token }}"
       shell: bash
+
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+          repository: 'muhammedgamal760/grad_project'
+          ref       : 'main'
+          token     : "${{ inputs.token }}" 
